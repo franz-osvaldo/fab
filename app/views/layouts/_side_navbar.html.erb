@@ -5,8 +5,8 @@
         <%= icon('book', 'Catalogo de aeronaves') %>
       <% end %>
     </li>
-    <li>
-      <%= link_to '' do %>
+    <li class="<%= 'active' if controller_name == 'aircrafts' %>">
+      <%= link_to aircrafts_path do %>
           <%= icon('plane', 'Flota de aeronaves') %>
       <% end %>
     </li>

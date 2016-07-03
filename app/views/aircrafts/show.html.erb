@@ -1,0 +1,7 @@
+Modelo: <%= @aircraft.model.model %> <br>
+Nombre: <%= @aircraft.name %> <br>
+Numero de matricula: <%= @aircraft.aircraft_registration %> <br>
+<%= link_to 'Lista de aeronaves', aircrafts_path %> |
+<%= link_to 'Editar', edit_aircraft_path(@aircraft) %>
+
+

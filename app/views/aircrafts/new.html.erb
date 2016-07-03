@@ -1,0 +1,16 @@
+<%= form_for @aircraft do |f| %>
+  <div class="form-group">
+    <%= f.label 'Modelo' %>
+    <%= f.collection_select(:model_id, @models, :id, :model) %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Nombre' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Numero de matricula' %>
+    <%= f.text_field :aircraft_registration, class: 'form-control' %>
+  </div>
+  <%= f.submit 'Guardar', class: 'btn btn-success btn-sm' %>
+<% end %>
+<%= link_to 'Lista de aeronaves', aircrafts_path %>

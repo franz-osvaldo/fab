@@ -8,4 +8,5 @@ class Model < ApplicationRecord
   validates :maximum_takeoff_weight, numericality: { greater_than: 0 }
   validates :maximum_takeoff_weight, numericality: true
   has_many :systems
+  has_many :aircrafts
 end
