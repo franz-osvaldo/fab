@@ -1,0 +1,28 @@
+<div class="container">
+  <ol class="breadcrumb">
+    <li><%= link_to @system.model.model, models_path %></li>
+    <li><%= link_to @system.name, model_systems_path(@system.model) %></li>
+    <li class="active">Componentes</li>
+  </ol>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @components.each do |component| %>
+        <tr>
+          <td><%= component.name %></td>
+          <td><%= component.description %></td>
+          <td><%= link_to 'Mostrar', component_path(component) %></td>
+          <td><%= link_to 'Editar', edit_component_path(component) %></td>
+          <td><%= link_to 'Eliminar', component_path(component), method: :delete, data: {confirm: 'Estas seguro?'} %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Agregar componente', new_system_component_path(@system) %>
+</div>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  manufacturer: MyString
+  model: MyString
+  capacity: 1
+  maximum_takeoff_weight: 1.5
+
+two:
+  manufacturer: MyString
+  model: MyString
+  capacity: 1
+  maximum_takeoff_weight: 1.5

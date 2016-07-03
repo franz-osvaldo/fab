@@ -1,0 +1,29 @@
+<div class="container">
+  <ol class="breadcrumb">
+    <li><%= link_to @system.model.model, models_path %></li>
+    <li class="active">Sistemas</li>
+  </ol>
+  <%= form_for @system do |f| %>
+      <% if @system.errors.any? %>
+          <% if @system.errors.size > 1 %>
+              <p>Tienes <%= @system.errors.size %> errores</p>
+          <% else %>
+              <p>Tienes un error</p>
+          <% end %>
+          <%  @system.errors.full_messages.each do |message| %>
+              <p><%= message %></p>
+          <% end %>
+      <% end %>
+      <div class="form-group">
+        <%= f.label 'Nombre' %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label 'Descripcion' %>
+        <%= f.text_area :description, class: 'form-control' %>
+      </div>
+      <%= f.submit 'Editar' %>
+  <% end %>
+  <%= link_to 'Lista de sistemas', model_systems_path(@system.model) %> |
+  <%= link_to 'Mostrar', system_path(@system) %>
+</div>

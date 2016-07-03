@@ -1,0 +1,10 @@
+<div class="container">
+  <ol class="breadcrumb">
+    <li><%= link_to @system.model.model, models_path %></li>
+    <li class="active">Sistemas</li>
+  </ol>
+  <%= @system.name %> <br>
+  <%= @system.description %> <br>
+  <%= link_to 'Lista de sistemas', model_systems_path(@system.model) %> |
+  <%= link_to 'Editar', edit_system_path(@system) %>
+</div>

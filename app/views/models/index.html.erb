@@ -1,0 +1,48 @@
+<div>
+  <ol class="breadcrumb">
+    <li class="active">Aeronaves</li>
+  </ol>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Foto</th>
+        <th>Modelo</th>
+        <th>Fabricante</th>
+        <th colspan="4"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @models.each do |model| %>
+        <tr>
+          <td>Foto</td>
+          <td><%= model.model %></td>
+          <td><%= model.manufacturer %></td>
+          <td>
+            <%= link_to  model, class: 'btn btn-info btn-sm' do %>
+              <span class="glyphicon glyphicon-search"></span> Mostrar
+            <% end %>
+          </td>
+          <td>
+            <%= link_to edit_model_path(model), class: 'btn btn-warning btn-sm' do %>
+              <span class="glyphicon glyphicon-pencil"></span> Editar
+            <% end %>
+          </td>
+          <td>
+            <%= link_to model, method: :delete, data: {confirm: 'Estas seguro?'}, class: 'btn btn-danger btn-sm' do %>
+              <span class="glyphicon glyphicon-trash"></span> Eliminar
+            <% end %>
+          </td>
+          <td>
+            <%= link_to model_systems_path(model), class: 'btn btn-success btn-sm' do %>
+                <span class="glyphicon glyphicon-plus"></span> Agregar sistemas
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to new_model_path, class: 'btn btn-success btn-sm' do %>
+      <span class="glyphicon glyphicon-plus"></span> Agregar aeronave
+  <% end %>
+</div>

@@ -1,0 +1,46 @@
+<div class="container">
+  <ol class="breadcrumb">
+    <li><%= link_to @model.model, models_path %></li>
+    <li class="active">Sistemas</li>
+  </ol>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th colspan="4"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @systems.each do |system| %>
+        <tr>
+          <td><%= system.name %></td>
+          <td><%= system.description %></td>
+          <td>
+            <%= link_to system_path(system), class: 'btn btn-info btn-sm' do %>
+              <span class="glyphicon glyphicon-search"></span> Mostrar
+            <% end %>
+          </td>
+          <td>
+            <%= link_to edit_system_path(system), class: 'btn btn-warning btn-sm' do %>
+              <span class="glyphicon glyphicon-pencil"></span> Editar
+            <% end %>
+          </td>
+          <td>
+            <%= link_to system_path(system), method: :delete, data: {confirm: 'Estas seguro?'}, class: 'btn btn-danger btn-sm' do %>
+              <span class="glyphicon glyphicon-trash"></span> Eliminar
+            <% end %>
+          </td>
+          <td>
+            <%= link_to system_components_path(system), class: 'btn btn-success btn-sm' do %>
+                <span class="glyphicon glyphicon-plus"></span> Agregar Componentes
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to new_model_system_path(@model), class: 'btn btn-success btn-sm' do %>
+      <span class="glyphicon glyphicon-plus"></span> Agregar sistema
+  <% end %>
+</div>

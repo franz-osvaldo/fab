@@ -1,0 +1,29 @@
+<div class="container">
+  <ol class="breadcrumb">
+    <li><%= link_to @system.model.model, models_path %></li>
+    <li><%= link_to @system.name, model_systems_path(@system.model) %></li>
+    <li class="active">Componentes</li>
+  </ol>
+  <%= form_for([@system, @component]) do |f| %>
+      <% if @component.errors.any? %>
+        <% if @component.errors.size > 1 %>
+            <p>Tienes <%= @component.errors.size %> errores</p>
+        <% else %>
+            <p>Tienes un error</p>
+        <% end %>
+        <%  @component.errors.full_messages.each do |message| %>
+            <p><%= message %></p>
+        <% end %>
+      <% end %>
+      <div class="form-group">
+      <%= f.label 'Nombre' %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label 'Descripcion' %>
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
+    <%= f.submit 'Guardar' %>
+  <% end %>
+  <%= link_to 'Lista de componentes', system_components_path(@system) %>
+</div>

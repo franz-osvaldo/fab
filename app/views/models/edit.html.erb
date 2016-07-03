@@ -1,0 +1,36 @@
+<div>
+  <ol class="breadcrumb">
+    <li class="active">Aeronaves</li>
+  </ol>
+  <%= form_for @model do |f| %>
+      <% if @model.errors.any? %>
+          <% if @model.errors.size > 1 %>
+              <p>Tienes <%= @model.errors.size %> errores</p>
+          <% else %>
+              <p>Tienes un error</p>
+          <% end %>
+          <%  @model.errors.full_messages.each do |message| %>
+              <p><%= message %></p>
+          <% end %>
+      <% end %>
+      <div class="form-group">
+        <%= f.label 'Fabricante' %>
+        <%= f.text_field :manufacturer, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label 'Modelo' %>
+        <%= f.text_field :model, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label 'Capacidad' %>
+        <%= f.text_field :capacity, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label 'Peso máximo de despegue' %>
+        <%= f.text_field :maximum_takeoff_weight, class: 'form-control' %>
+      </div>
+      <%= f.submit 'Editar' %>
+  <% end %>
+   <%= link_to 'Lista de aeronaves', models_path %> |
+   <%= link_to 'Mostrar', @model %>
+</div>

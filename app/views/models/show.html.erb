@@ -1,0 +1,11 @@
+<div>
+  <ol class="breadcrumb">
+    <li class="active">Aeronaves</li>
+  </ol>
+  Fabricante: <%= @model.manufacturer %> <br>
+  Modelo: <%= @model.model %><br>
+  Capacidad: <%= @model.capacity %><br>
+  Peso maximo de despegue: <%= @model.maximum_takeoff_weight %><br>
+  <%= link_to 'Lista de aeronaves', models_path %> |
+  <%= link_to 'Editar', edit_model_path(@model) %>
+</div>
