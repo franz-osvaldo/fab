@@ -18,6 +18,7 @@ class AircraftsController < ApplicationController
 
   def create
     @aircraft  = Aircraft.new(aircraft_params)
+    @models = Model.all
     respond_to do |format|
       if @aircraft.save
         format.html{ redirect_to @aircraft }
@@ -29,6 +30,7 @@ class AircraftsController < ApplicationController
 
   def update
     @aircraft = Aircraft.find(params[:id])
+    @models = Model.all
     respond_to do |format|
       if @aircraft.update(aircraft_params)
         format.html{ redirect_to @aircraft }

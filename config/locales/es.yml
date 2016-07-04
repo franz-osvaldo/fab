@@ -5,6 +5,7 @@ es:
       model: modelo
       model: system
       model: component
+      model: aircraft
     attributes:
       model:
         model: "Modelo"
@@ -17,6 +18,9 @@ es:
       component:
         description: "Descripcion"
         name: "Nombre"
+      aircraft:
+        name: "Nombre"
+        aircraft_registration: "Numero de matricula"
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"

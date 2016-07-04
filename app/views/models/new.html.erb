@@ -3,16 +3,16 @@
     <li class="active">Aeronaves</li>
   </ol>
   <%= form_for @model do |f| %>
-      <% if @model.errors.any? %>
-          <% if @model.errors.size > 1 %>
-              <p>Tienes <%= @model.errors.size %> errores</p>
-          <% else %>
-              <p>Tienes un error</p>
-          <% end %>
-          <%  @model.errors.full_messages.each do |message| %>
-              <p><%= message %></p>
-          <% end %>
-      <% end %>
+    <% if @model.errors.any? %>
+        <% if @model.errors.size > 1 %>
+            <p>Tienes <%= @model.errors.size %> errores</p>
+        <% else %>
+            <p>Tienes un error</p>
+        <% end %>
+        <%  @model.errors.full_messages.each do |message| %>
+            <p><%= message %></p>
+        <% end %>
+    <% end %>
     <div class="form-group">
       <%= f.label 'Fabricante' %>
       <%= f.text_field :manufacturer, class: 'form-control' %>

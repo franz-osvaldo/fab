@@ -1,4 +1,14 @@
 <%= form_for @aircraft do |f| %>
+  <% if @aircraft.errors.any? %>
+      <% if @aircraft.errors.size > 1 %>
+          <p>Tienes <%= @aircraft.errors.size %> errores</p>
+      <% else %>
+          <p>Tienes un error</p>
+      <% end %>
+      <%  @aircraft.errors.full_messages.each do |message| %>
+          <p><%= message %></p>
+      <% end %>
+  <% end %>
   <div class="form-group">
     <%= f.label 'Modelo' %>
     <%= f.collection_select(:model_id, @models, :id, :model) %>
